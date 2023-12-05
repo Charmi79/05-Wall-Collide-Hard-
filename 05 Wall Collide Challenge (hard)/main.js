@@ -38,17 +38,22 @@ function loop() {
 
   // Stop at wall
 
-  if (blueX + 50 > wallX && blueY + 50 > wallY && blueY < wallY + 160) {
-    blueX = wallX - 50;
-  } else if (blueX < wallX + 40 && blueY + 50 > wallY && blueY < wallY + 160) {
-    blueX = wallX + 40;
-  }
-
-  if (blueY + 50 > wallY && blueX + 50 > wallX && blueX < wallX) {
-    blueY = wallY - 50;
-  } else if (blueY < wallY + 160 && blueX + 50 > wallX && blueX < wallX) {
-    blueY = wallY + 160;
-  }
+  	if (
+		blueX < wallX + 40 &&
+		blueX + 50 > wallX &&
+		blueY < wallY + 160 &&
+		blueY + 50 > wallY
+	) {
+		if (upKey) {
+			blueY = wallY + 160;
+		} else if (downKey) {
+			blueY = wallY - 50;
+		} else if (leftKey) {
+			blueX = wallX + 40;
+		} else if (rightKey) {
+			blueX = wallX - 50;
+		}
+	}
 
   // Draw Background
   ctx.fillStyle = "white";
