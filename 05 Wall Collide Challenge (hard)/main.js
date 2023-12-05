@@ -38,21 +38,21 @@ function loop() {
 
   // Stop at wall
 
-  	if (
-		blueX < wallX + 40 &&
-		blueX + 50 > wallX &&
-		blueY < wallY + 160 &&
-		blueY + 50 > wallY
-	) {
-		if (upKey) {
-			blueY = wallY + 160;
-		} else if (downKey) {
-			blueY = wallY - 50;
-		} else if (leftKey) {
-			blueX = wallX + 40;
-		} else if (rightKey) {
-			blueX = wallX - 50;
-		}
+  if (
+	blueX < wallX + 40 &&
+	blueX + 50 > wallX &&
+	blueY < wallY + 160 &&
+	blueY + 50 > wallY
+) {
+	if (upKey) {
+	blueY = wallY + 160;
+	} else if (downKey) {
+	blueY = wallY - 50;
+	} else if (leftKey) {
+	blueX = wallX + 40;
+	} else if (rightKey) {
+	blueX = wallX - 50;
+	}
 	}
 
   // Draw Background
